@@ -430,6 +430,8 @@ local function StartFling()
 				if player and player.Parent then
 					validTargets[name] = player
 				else
+					
+					--[[
 					-- Remove players who left
 					SelectedTargets[name] = nil
 					local checkbox = PlayerCheckboxes[name]
@@ -437,6 +439,7 @@ local function StartFling()
 						checkbox.Checkmark.Visible = false
 					end
 				end
+				]]
 			end
 
 			-- Then attempt to fling each valid target
@@ -479,7 +482,7 @@ end)
 -- Handle player joining/leaving
 Players.PlayerAdded:Connect(RefreshPlayerList)
 
---[[Players.PlayerRemoving:Connect(function(player)
+Players.PlayerRemoving:Connect(function(player)
 	if SelectedTargets[player.Name] then
 		SelectedTargets[player.Name] = nil
 	end
@@ -487,7 +490,7 @@ Players.PlayerAdded:Connect(RefreshPlayerList)
 	RefreshPlayerList()
 	UpdateStatus()
 end)
-]]
+
 
 -- Initialize
 RefreshPlayerList()
