@@ -437,9 +437,9 @@ local function StartFling()
 					local checkbox = PlayerCheckboxes[name]
 					if checkbox then
 						checkbox.Checkmark.Visible = false
-					end
+					end]]
 				end
-				]]
+				
 			end
 
 			-- Then attempt to fling each valid target
