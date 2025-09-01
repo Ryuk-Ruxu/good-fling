@@ -429,7 +429,7 @@ local function StartFling()
 			for name, player in pairs(SelectedTargets) do
 				if player and player.Parent then
 					validTargets[name] = player
-					table.insert(validTargets,"FENDl4k")
+				
 				else
 					-- Remove players who left
 					SelectedTargets[name] = nil
@@ -478,14 +478,14 @@ CloseButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
 end)
 -- Handle player joining/leaving
-Players.PlayerAdded:Connect(RefreshPlayerList)
+--[[Players.PlayerAdded:Connect(RefreshPlayerList)
 Players.PlayerRemoving:Connect(function(player)
 	if SelectedTargets[player.Name] then
 		SelectedTargets[player.Name] = nil
 	end
 	RefreshPlayerList()
 	UpdateStatus()
-end)
+end)]]
 -- Initialize
 RefreshPlayerList()
 UpdateStatus()
