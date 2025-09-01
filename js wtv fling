@@ -482,7 +482,7 @@ end)
 -- Handle player joining/leaving
 Players.PlayerAdded:Connect(RefreshPlayerList)
 
-Players.PlayerRemoving:Connect(function(player)
+--[[Players.PlayerRemoving:Connect(function(player)
 	if SelectedTargets[player.Name] then
 		SelectedTargets[player.Name] = nil
 	end
@@ -490,7 +490,7 @@ Players.PlayerRemoving:Connect(function(player)
 	RefreshPlayerList()
 	UpdateStatus()
 end)
-
+]]
 
 -- Initialize
 RefreshPlayerList()
